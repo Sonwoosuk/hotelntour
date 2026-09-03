@@ -47,11 +47,12 @@
 
 /* ---- 히어로 ---- */
 .hero{ margin-top:14px; }
+/* 로고 바로 아래 붙는 브랜드 태그라인 */
 .hero__tagline{
-  margin:0; text-align:center;
-  font-size:24px; font-weight:800; letter-spacing:-0.04em; line-height:1.25; color:var(--ink);
+  margin:14px auto 40px; text-align:center;
+  font-size:16px; font-weight:700; letter-spacing:-0.03em; line-height:1.4; color:var(--plum);
 }
-.hero__logomask{ display:block; width:86%; max-width:440px; margin:52px auto 40px; aspect-ratio:1500 / 402; }
+.hero__logomask{ display:block; width:86%; max-width:440px; margin:44px auto 0; aspect-ratio:1500 / 402; }
 .hero__logomask image{ display:block; }
 
 /* ---- 히어로 → 본문 브레이크 ---- */
@@ -238,11 +239,7 @@
 <div class="pg">
 
   <div class="wrap">
-    <!-- 히어로 : 태그라인 → 마퀴 → 로고 -->
-    <section class="hero">
-      <p class="hero__tagline">가족을 위한 1:1 맞춤 자유여행</p>
-    </section>
-
+    <!-- 히어로 : 마퀴 → 로고 → 브랜드 태그라인 -->
     <div class="mq" aria-hidden="true">
       <div class="mq__row">
         <div class="mq__set"><span>하와이 — 맞춤형 알로하 라이프의 경험</span><span>몰디브 — 에메랄드빛 바다 위 프라이빗 휴양</span><span>발리 — 휴양과 액티비티가 공존하는 여행의 천국</span><span>유럽 — 내 맘대로 그리는 예술 같은 여정</span></div>
@@ -263,6 +260,7 @@
         </g>
       </svg>
     </h1>
+    <p class="hero__tagline">가족을 위한 1:1 맞춤 자유여행</p>
   </div>
 
   <!-- 끊어주는 요소 -->
