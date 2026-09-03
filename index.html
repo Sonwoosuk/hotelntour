@@ -93,13 +93,14 @@
   color:var(--ink);
 }
 
-/* 히어로 로고 : 브랜드 로고 이미지 (마스크 대신 통짜 이미지 — file:// 로 열어도 안전) */
-.hero__logo{
+/* 히어로 로고 마스크 : 로고 글자 모양 안에 여행지 사진 (SVG <mask> — file://·HTTP 모두 안정 렌더) */
+.hero__logomask{
   display:block;
-  width:min(100%,880px);
-  margin:clamp(22px,3.6vw,46px) auto clamp(4px,1vw,12px);
+  margin:clamp(88px,13vw,168px) auto clamp(56px,9vw,112px);
+  width:min(78%,820px);
+  aspect-ratio:1500 / 402;
 }
-.hero__logo img{ width:100%; height:auto; display:block; }
+.hero__logomask image{ display:block; }
 
 /* ---- 히어로 → 본문 사이 끊어주는 요소 ---- */
 .breather{ padding:clamp(60px,10vw,132px) var(--gutter); text-align:center; }
@@ -318,8 +319,18 @@
       </div>
     </div>
 
-    <h1 class="hero__logo">
-      <img src="assets/htn-logo/htn-logo-kr.png" alt="호텔엔투어" width="1500" height="404">
+    <h1 style="margin:0">
+      <svg class="hero__logomask" viewBox="0 0 1500 402" role="img" aria-label="호텔엔투어">
+        <defs>
+          <mask id="htnLogoMask" maskUnits="userSpaceOnUse" x="0" y="0" width="1500" height="402">
+            <image href="assets/htn-logo/htn-logo-kr-white.png" xlink:href="assets/htn-logo/htn-logo-kr-white.png" width="1500" height="402"></image>
+          </mask>
+        </defs>
+        <g mask="url(#htnLogoMask)">
+          <image href="assets/hero-main.jpg" xlink:href="assets/hero-main.jpg" width="1500" height="402" preserveAspectRatio="xMidYMid slice"></image>
+          <rect width="1500" height="402" fill="#121212" opacity="0.34"></rect>
+        </g>
+      </svg>
     </h1>
   </div>
 

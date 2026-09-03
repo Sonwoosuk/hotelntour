@@ -51,8 +51,8 @@
   margin:0; text-align:center;
   font-size:24px; font-weight:800; letter-spacing:-0.04em; line-height:1.25; color:var(--ink);
 }
-.hero__logo{ display:block; width:88%; max-width:420px; margin:18px auto 4px; }
-.hero__logo img{ width:100%; height:auto; }
+.hero__logomask{ display:block; width:86%; max-width:440px; margin:52px auto 40px; aspect-ratio:1500 / 402; }
+.hero__logomask image{ display:block; }
 
 /* ---- 히어로 → 본문 브레이크 ---- */
 .breather{ padding:52px var(--gutter); text-align:center; }
@@ -250,8 +250,18 @@
       </div>
     </div>
 
-    <h1 class="hero__logo">
-      <img src="assets/htn-logo/htn-logo-kr.png" alt="호텔엔투어" width="1500" height="404">
+    <h1 style="margin:0">
+      <svg class="hero__logomask" viewBox="0 0 1500 402" role="img" aria-label="호텔엔투어">
+        <defs>
+          <mask id="htnLogoMask" maskUnits="userSpaceOnUse" x="0" y="0" width="1500" height="402">
+            <image href="assets/htn-logo/htn-logo-kr-white.png" xlink:href="assets/htn-logo/htn-logo-kr-white.png" width="1500" height="402"></image>
+          </mask>
+        </defs>
+        <g mask="url(#htnLogoMask)">
+          <image href="assets/hero-main.jpg" xlink:href="assets/hero-main.jpg" width="1500" height="402" preserveAspectRatio="xMidYMid slice"></image>
+          <rect width="1500" height="402" fill="#121212" opacity="0.34"></rect>
+        </g>
+      </svg>
     </h1>
   </div>
 
