@@ -85,10 +85,6 @@
   background:linear-gradient(90deg, rgba(10,14,18,.62), rgba(10,14,18,.08) 60%);
   transition:opacity .4s ease;
 }
-.hero__strip-idx{
-  position:absolute; z-index:2; top:clamp(14px,2vw,22px); left:clamp(18px,4vw,56px);
-  font-size:12px; font-weight:800; letter-spacing:.1em; color:rgba(255,255,255,.7);
-}
 .hero__strip b{
   position:absolute; z-index:2; left:clamp(18px,4vw,56px);
   bottom:clamp(12px,2vw,22px); line-height:1;
@@ -99,11 +95,6 @@
   padding:4px 2px;
   transition:transform .4s cubic-bezier(.22,.61,.36,1), background-color .28s ease, color .28s ease, text-shadow .28s ease, padding .28s ease;
 }
-.hero__strip-bar{
-  position:absolute; z-index:2; left:0; bottom:0; height:5px; width:0;
-  background:#a5330b;
-  transition:width .5s cubic-bezier(.22,.61,.36,1);
-}
 /* 4컷 호버 : 올린 컷만 컬러·확대, 나머지는 톤다운 + 라벨은 블록 컬러로 반전 */
 .hero__strips:hover .hero__strip-media img{ filter:grayscale(.75) brightness(.75); }
 .hero__strips:hover .hero__strip:hover .hero__strip-media img{ filter:grayscale(0) brightness(1) scale(1.08); }
@@ -112,9 +103,8 @@
   background-color:#a5330b; color:var(--white); text-shadow:none;
   padding:4px 14px; transform:translateY(-4px);
 }
-.hero__strip:hover .hero__strip-bar{ width:100%; }
 @media (prefers-reduced-motion:reduce){
-  .hero__strip-media img,.hero__strip-media::after,.hero__strip b,.hero__strip-bar{ transition:none; }
+  .hero__strip-media img,.hero__strip-media::after,.hero__strip b{ transition:none; }
   .hero__strips:hover .hero__strip-media img,
   .hero__strips:hover .hero__strip:hover .hero__strip-media img{ filter:none; transform:none; }
 }
@@ -522,27 +512,19 @@ jQuery(function($){
       <div class="hero__strips">
         <span class="hero__strip">
           <span class="hero__strip-media"><img src="assets/htn-hero/hawaii.jpg" alt="하와이"></span>
-          <span class="hero__strip-idx">01</span>
           <b>Hawaii</b>
-          <span class="hero__strip-bar" aria-hidden="true"></span>
         </span>
         <span class="hero__strip">
           <span class="hero__strip-media"><img src="https://new.honeymoonresort.co.kr/new_ver/img/company-intro/destinations/maldives.jpg" alt="몰디브"></span>
-          <span class="hero__strip-idx">02</span>
           <b>Maldives</b>
-          <span class="hero__strip-bar" aria-hidden="true"></span>
         </span>
         <span class="hero__strip">
           <span class="hero__strip-media"><img src="https://new.honeymoonresort.co.kr/new_ver/img/company-intro/destinations/bali.jpg" alt="발리"></span>
-          <span class="hero__strip-idx">03</span>
           <b>Bali</b>
-          <span class="hero__strip-bar" aria-hidden="true"></span>
         </span>
         <span class="hero__strip">
           <span class="hero__strip-media"><img src="https://new.honeymoonresort.co.kr/new_ver/img/company-intro/destinations/europe.jpg" alt="유럽"></span>
-          <span class="hero__strip-idx">04</span>
           <b>Europe</b>
-          <span class="hero__strip-bar" aria-hidden="true"></span>
         </span>
       </div>
     </div>
