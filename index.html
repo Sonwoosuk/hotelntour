@@ -128,24 +128,55 @@
   color:var(--ink);
 }
 .breather__kicker b{ color:#a5330b; font-weight:800; }
+.breather__kicker .w{ display:inline-block; vertical-align:top; }
+.breather__kicker.split .w{ overflow:hidden; }
+.breather__kicker.split .w-in{
+  display:inline-block; transform:translateY(120%);
+  transition:transform .55s cubic-bezier(.16,1,.3,1);
+  transition-delay:calc(var(--i,0) * 55ms);
+}
+.breather__kicker.split.in .w-in{ transform:translateY(0); }
+@media (prefers-reduced-motion:reduce){
+  .breather__kicker.split .w-in{ transition:none; transform:none; }
+}
+
 .breather__cue{
-  position:relative; width:2px; height:clamp(48px,7vw,74px);
+  position:relative; width:2px; height:clamp(56px,8vw,84px);
   margin:clamp(26px,4.4vw,46px) auto 0;
-  background:rgba(25,25,25,.16); overflow:hidden;
 }
-.breather__cue::after{
-  content:""; position:absolute; left:0; top:0; width:100%; height:42%;
-  background:var(--ink); border-radius:2px;
-  animation:cue-drop 2.3s cubic-bezier(.5,0,.5,1) infinite;
+.breather__cue-line{
+  position:absolute; left:0; top:0; width:100%; height:59%;
+  background:rgba(25,25,25,.18); border-radius:2px;
 }
-@keyframes cue-drop{
-  0%{ transform:translateY(-110%); opacity:0; }
-  25%{ opacity:1; }
-  75%{ opacity:1; }
-  100%{ transform:translateY(360%); opacity:0; }
+.breather__cue-pin{
+  position:absolute; left:50%; top:59%; width:16px; height:16px;
+  transform:translateX(-50%);
+  animation:cue-pin-drop 2.6s cubic-bezier(.34,1.56,.64,1) infinite;
+}
+.breather__cue-pin svg{ display:block; width:100%; height:100%; }
+.breather__cue-ring{
+  position:absolute; left:50%; bottom:2%; width:7px; height:7px; margin-left:-3.5px;
+  border:1.5px solid var(--ink); border-radius:50%; opacity:0;
+  animation:cue-pin-ring 2.6s cubic-bezier(.2,.6,.4,1) infinite;
+}
+@keyframes cue-pin-drop{
+  0%{ top:22%; opacity:0; }
+  18%{ opacity:1; }
+  46%{ top:72%; }
+  52%{ top:66%; }
+  56%{ top:72%; }
+  80%{ top:72%; opacity:1; }
+  100%{ top:72%; opacity:0; }
+}
+@keyframes cue-pin-ring{
+  0%,44%{ opacity:0; transform:scale(.4); }
+  50%{ opacity:.5; transform:scale(.4); }
+  72%{ opacity:0; transform:scale(2.6); }
+  100%{ opacity:0; transform:scale(2.6); }
 }
 @media (prefers-reduced-motion:reduce){
-  .breather__cue::after{ animation:none; height:100%; opacity:.4; }
+  .breather__cue-pin{ animation:none; top:72%; opacity:1; }
+  .breather__cue-ring{ display:none; }
 }
 
 /* ---- 마퀴 ---- */
@@ -410,8 +441,26 @@ jQuery(function($){
 
   <!-- 끊어주는 요소 -->
   <section class="breather">
-    <p class="breather__kicker">가족, 친구, 커플 모두의 여행,<br><b>그 시작과 끝</b>을 함께 설계합니다</p>
-    <div class="breather__cue" aria-hidden="true"></div>
+    <p class="breather__kicker">
+      <span class="w" style="--i:0"><span class="w-in">가족,</span></span>
+      <span class="w" style="--i:1"><span class="w-in">친구,</span></span>
+      <span class="w" style="--i:2"><span class="w-in">커플</span></span>
+      <span class="w" style="--i:3"><span class="w-in">모두의</span></span>
+      <span class="w" style="--i:4"><span class="w-in">여행,</span></span>
+      <br>
+      <span class="w" style="--i:5"><span class="w-in"><b>그</b></span></span>
+      <span class="w" style="--i:6"><span class="w-in"><b>시작과</b></span></span>
+      <span class="w" style="--i:7"><span class="w-in"><b>끝</b>을</span></span>
+      <span class="w" style="--i:8"><span class="w-in">함께</span></span>
+      <span class="w" style="--i:9"><span class="w-in">설계합니다</span></span>
+    </p>
+    <div class="breather__cue" aria-hidden="true">
+      <span class="breather__cue-line"></span>
+      <span class="breather__cue-pin">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 2C7.6 2 4 5.6 4 10c0 5.5 7 11.5 7.3 11.7a1 1 0 0 0 1.4 0C13 21.5 20 15.5 20 10c0-4.4-3.6-8-8-8Z" fill="#191919"/><circle cx="12" cy="10" r="3" fill="#ffc21f"/></svg>
+      </span>
+      <span class="breather__cue-ring"></span>
+    </div>
   </section>
 
   <!-- 어떤 여행사인가요 -->
@@ -757,6 +806,22 @@ jQuery(function($){
           else { vid.pause(); }
         });
       }, { threshold: 0.4 }).observe(vid);
+    }
+  }
+
+  /* 브레이커 카피 '촤라락' 단어 순차 등장 */
+  var kicker = document.querySelector('.breather__kicker');
+  if (kicker) {
+    var reduceKicker = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!reduceKicker && 'IntersectionObserver' in window) {
+      kicker.classList.add('split');
+      new IntersectionObserver(function(entries, obs){
+        entries.forEach(function(e){
+          if (!e.isIntersecting) return;
+          kicker.classList.add('in');
+          obs.unobserve(kicker);
+        });
+      }, { threshold: 0.4 }).observe(kicker);
     }
   }
 
