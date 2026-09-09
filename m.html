@@ -34,6 +34,10 @@
 .pg ul{list-style:none;}
 .pg img{display:block;max-width:100%;}
 .pg :where(h1,h2,h3){color:var(--ink);letter-spacing:-0.035em;}
+/* 마지막 줄 외톨이 방지 */
+.pg :where(h1,h2,h3,h4){text-wrap:balance;}
+.pg p{text-wrap:pretty;}
+.pg p.sec__tag, .pg .dest__hard h4{text-wrap:balance;}
 .wrap{width:100%;padding:0 var(--gutter);}
 
 /* ---- 섹션 ---- */
