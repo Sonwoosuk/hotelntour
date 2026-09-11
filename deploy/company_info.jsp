@@ -332,7 +332,7 @@ src="https://www.facebook.com/tr?id=162246964396993&ev=PageView&noscript=1"
     <div class="wrap">
       <h2 class="sec__h">이런 여행을 설계합니다</h2>
       <div class="aud__stage">
-        <figure class="aud__photo"><video class="aud__video" src="${htn}/0901.mp4" muted loop playsinline preload="metadata" aria-label="가족이 함께 떠나는 여행"></video></figure>
+        <figure class="aud__photo"><video class="aud__video" src="${htn}/0901.jpg" muted loop playsinline preload="metadata" aria-label="가족이 함께 떠나는 여행"></video></figure>
         <div class="aud__cards">
           <article class="aud__card"><h3>가족여행</h3><p>3대 가족여행, 아이 동반 · 부모님 동반 가족여행까지 구성과 일정에 맞춰 설계합니다.</p></article>
           <article class="aud__card"><h3>럭셔리 자유여행</h3><p>전 세계 하이엔드 호텔·리조트와의 B2B 직계약 기반, 거품을 뺀 특가와 혜택을 제안합니다.</p></article>
@@ -355,7 +355,7 @@ src="https://www.facebook.com/tr?id=162246964396993&ev=PageView&noscript=1"
           <b>Maldives</b>
         </span>
         <span class="hero__strip">
-          <span class="hero__strip-media"><img src="${htn}/bali.webp" alt="발리"></span>
+          <span class="hero__strip-media"><img src="${htn}/bali.jpg" alt="발리"></span>
           <b>Bali</b>
         </span>
         <span class="hero__strip">
@@ -456,7 +456,7 @@ src="https://www.facebook.com/tr?id=162246964396993&ev=PageView&noscript=1"
 
       <article class="dest__block">
         <div class="dest__row">
-          <figure class="dest__media"><img src="${htn}/bali.webp" alt="발리 포시즌스 짐바란 베이"></figure>
+          <figure class="dest__media"><img src="${htn}/bali.jpg" alt="발리 포시즌스 짐바란 베이"></figure>
           <div>
             <h3 class="dest__name">발리<small>휴양과 액티비티가 공존하는 여행의 천국</small></h3>
             <p class="dest__desc">프라이빗 풀빌라의 낭만과 다이내믹한 현지 문화가 어우러진 발리. 신혼여행·가족여행은 물론 우정여행, 골프여행, 태교여행 등 다채로운 테마를 찾으신다면 발리가 정답입니다. 호텔엔투어는 발리 전역의 랜드마크급 럭셔리 리조트를 가장 좋은 조건으로 안내합니다.</p>
