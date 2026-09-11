@@ -110,7 +110,7 @@ body{ overflow-x:hidden; }
 .pg .wrap{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 var(--gutter);}
 
 .pg .sec{ padding:clamp(42px,6vw,84px) 0; }
-.pg .sec--band{ padding:clamp(16px,2.4vw,32px) 0; }
+.pg .sec--band{ padding:clamp(4px,1vw,14px) 0 clamp(16px,2.4vw,32px); }
 .pg .sec--white{ background:var(--white); }
 .pg .sec--cream{ background:var(--cream); }
 .pg .sec__h{ font-size:clamp(26px,4.2vw,48px); font-weight:800; letter-spacing:-0.045em; line-height:1.2; text-align:center; }
