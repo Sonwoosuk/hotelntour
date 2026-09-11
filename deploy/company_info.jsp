@@ -232,7 +232,7 @@ src="https://www.facebook.com/tr?id=162246964396993&ev=PageView&noscript=1"
 .pg .diff__panel p{ margin:16px auto 0; font-size:13.5px; line-height:1.8; color:#e7e3da; text-align:left; }
 .pg .diff__places{ margin:20px 0 0; display:flex; flex-wrap:wrap; gap:7px; justify-content:center; }
 .pg .diff__places li{ white-space:nowrap; padding:5px 7px !important; border-radius:999px; background:rgba(255,255,255,.1); font-size:10px; font-weight:700; color:var(--white); line-height:1.4; }
-.pg .diff__places--type{ margin-top:16px; }
+.pg .diff__places--type{ margin-top:24px; }
 .pg .diff__places--type li{ background:var(--orange); color:var(--white); }
 
 .pg .tube__grid{ margin-top:20px; display:flex; flex-direction:column; gap:12px; }
