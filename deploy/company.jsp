@@ -608,7 +608,7 @@ body{ overflow-x:hidden; }
 
       <article class="dest__block">
         <div class="dest__row">
-          <figure class="dest__media"><img src="${htn}/thailand.jpg" alt="태국 코사무이 리조트 전경"></figure>
+          <figure class="dest__media"><img src="${htn}/thailand.jpg" alt="태국 코사무이 리조트 전경" style="object-position:25% 50%;"></figure>
           <div>
             <h3 class="dest__name">태국<small>리조트 휴양과 로컬 감성을 함께 즐기는 여행</small></h3>
             <p class="dest__desc">태국은 짧은 비행 시간과 풍부한 리조트 선택지, 합리적인 현지 물가로 가족여행과 신혼여행, 우정여행 모두에게 사랑받는 휴양지입니다. 호텔엔투어는 푸켓, 카오락, 코사무이의 지역별 분위기와 리조트 컨디션을 비교해 여행 목적에 맞는 숙소와 동선을 제안합니다.</p>
