@@ -231,12 +231,12 @@ src="https://www.facebook.com/tr?id=162246964396993&ev=PageView&noscript=1"
 .pg .diff__panel h2{ color:var(--white); font-size:22px; font-weight:800; letter-spacing:-0.04em; line-height:1.3; }
 .pg .diff__panel p{ margin:16px auto 0; font-size:13.5px; line-height:1.8; color:#e7e3da; text-align:left; }
 .pg .diff__places{
-  margin:20px calc(var(--gutter) * -1) 0; padding:0 var(--gutter) 4px;
-  display:flex; flex-wrap:nowrap; gap:7px; overflow-x:auto; -webkit-overflow-scrolling:touch; scrollbar-width:none;
+  margin:20px calc(var(--gutter) * -1) 0; padding:0 var(--gutter) 4px !important;
+  display:flex; flex-wrap:nowrap; align-items:center; gap:10px; overflow-x:auto; -webkit-overflow-scrolling:touch; scrollbar-width:none;
 }
 .pg .diff__places::-webkit-scrollbar{ display:none; }
-.pg .diff__places li{ flex:none; white-space:nowrap; padding:7px 13px; border-radius:999px; background:rgba(255,255,255,.1); font-size:12px; font-weight:700; color:var(--white); }
-.pg .diff__places--type{ margin-top:10px; }
+.pg .diff__places li{ flex:none; white-space:nowrap; padding:8px 16px !important; border-radius:999px; background:rgba(255,255,255,.1); font-size:12px; font-weight:700; color:var(--white); line-height:1.4; }
+.pg .diff__places--type{ margin-top:12px; }
 .pg .diff__places--type li{ background:var(--orange); color:var(--white); }
 
 .pg .tube__grid{ margin-top:20px; display:flex; flex-direction:column; gap:12px; }
