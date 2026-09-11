@@ -230,8 +230,8 @@ src="https://www.facebook.com/tr?id=162246964396993&ev=PageView&noscript=1"
 .pg .diff__panel{ background:var(--ink); color:var(--white); border-radius:18px; padding:28px 22px; text-align:center; }
 .pg .diff__panel h2{ color:var(--white); font-size:22px; font-weight:800; letter-spacing:-0.04em; line-height:1.3; }
 .pg .diff__panel p{ margin:16px auto 0; font-size:13.5px; line-height:1.8; color:#e7e3da; text-align:left; }
-.pg .diff__places{ margin:20px 0 0; display:flex; flex-wrap:wrap; gap:5px; justify-content:center; }
-.pg .diff__places li{ white-space:nowrap; padding:5px 8px !important; border-radius:999px; background:rgba(255,255,255,.1); font-size:10px; font-weight:700; color:var(--white); line-height:1.4; }
+.pg .diff__places{ margin:20px 0 0; display:flex; flex-wrap:wrap; gap:7px; justify-content:center; }
+.pg .diff__places li{ white-space:nowrap; padding:5px 7px !important; border-radius:999px; background:rgba(255,255,255,.1); font-size:10px; font-weight:700; color:var(--white); line-height:1.4; }
 .pg .diff__places--type{ margin-top:16px; }
 .pg .diff__places--type li{ background:var(--orange); color:var(--white); }
 
