@@ -332,7 +332,7 @@ src="https://www.facebook.com/tr?id=162246964396993&ev=PageView&noscript=1"
     <div class="wrap">
       <h2 class="sec__h">이런 여행을 설계합니다</h2>
       <div class="aud__stage">
-        <figure class="aud__photo"><video class="aud__video" src="${htn}/0901.jpg" muted loop playsinline preload="metadata" aria-label="가족이 함께 떠나는 여행"></video></figure>
+        <figure class="aud__photo"><video class="aud__video" muted loop playsinline preload="metadata" aria-label="가족이 함께 떠나는 여행"><source src="${htn}/0901.jpg" type="video/mp4"></video></figure>
         <div class="aud__cards">
           <article class="aud__card"><h3>가족여행</h3><p>3대 가족여행, 아이 동반 · 부모님 동반 가족여행까지 구성과 일정에 맞춰 설계합니다.</p></article>
           <article class="aud__card"><h3>럭셔리 자유여행</h3><p>전 세계 하이엔드 호텔·리조트와의 B2B 직계약 기반, 거품을 뺀 특가와 혜택을 제안합니다.</p></article>
