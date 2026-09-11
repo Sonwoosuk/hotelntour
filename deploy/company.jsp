@@ -254,7 +254,7 @@ body{ overflow-x:hidden; }
   gap:clamp(20px,3.4vw,52px); align-items:start;
 }
 .pg .dest__block:nth-of-type(even) .dest__media{ order:2; }
-.pg .dest__media{ border-radius:var(--radius); overflow:hidden; background:#33454e; align-self:stretch; min-height:clamp(300px,34vw,460px); }
+.pg .dest__media{ border-radius:var(--radius); overflow:hidden; background:#33454e; align-self:stretch; min-height:clamp(300px,34vw,460px); max-height:clamp(300px,34vw,460px); }
 .pg .dest__media img{ width:100%; height:100%; object-fit:cover; }
 .pg .dest__name{ font-size:clamp(26px,3.4vw,40px); font-weight:800; letter-spacing:-0.04em; line-height:1.1; }
 .pg .dest__name small{ display:block; margin-top:8px; font-size:clamp(13px,1.3vw,16px); font-weight:700; color:var(--plum); letter-spacing:-0.02em; }

@@ -197,11 +197,11 @@ src="https://www.facebook.com/tr?id=162246964396993&ev=PageView&noscript=1"
 .pg .dest__name small{ display:block; margin-top:7px; font-size:13px; font-weight:700; color:var(--plum); letter-spacing:-0.02em; }
 .pg .dest__desc{ margin-top:14px; font-size:13.5px; line-height:1.8; color:var(--body); }
 .pg .dest__desc + .dest__desc{ margin-top:10px; }
-.pg .dest__lineup{ margin-top:14px; background:var(--cream); border-radius:14px; padding:14px 16px; display:flex; flex-direction:column; gap:7px; }
+.pg .dest__lineup{ margin-top:14px; background:var(--cream); border-radius:14px; padding:14px 16px !important; display:flex; flex-direction:column; gap:7px; }
 .pg .sec--white .dest__lineup{ background:var(--yellow-soft); }
 .pg .dest__lineup li{ font-size:12.5px; line-height:1.5; color:var(--ink); }
 .pg .dest__lineup li b{ font-weight:800; }
-.pg .dest__hard{ margin-top:12px; background:var(--yellow-soft); border-radius:14px; padding:14px 16px; }
+.pg .dest__hard{ margin-top:12px; background:var(--yellow-soft); border-radius:14px; padding:14px 16px !important; }
 .pg .sec--white .dest__hard{ background:var(--cream); }
 .pg .dest__hard h4{ font-size:13.5px; font-weight:800; color:var(--ink); }
 .pg .dest__hard h4 b{ color:#a5330b; font-weight:800; margin-right:5px; }
@@ -230,8 +230,12 @@ src="https://www.facebook.com/tr?id=162246964396993&ev=PageView&noscript=1"
 .pg .diff__panel{ background:var(--ink); color:var(--white); border-radius:18px; padding:28px 22px; text-align:center; }
 .pg .diff__panel h2{ color:var(--white); font-size:22px; font-weight:800; letter-spacing:-0.04em; line-height:1.3; }
 .pg .diff__panel p{ margin:16px auto 0; font-size:13.5px; line-height:1.8; color:#e7e3da; text-align:left; }
-.pg .diff__places{ margin:20px 0 0; display:flex; flex-wrap:wrap; gap:7px; justify-content:center; }
-.pg .diff__places li{ padding:7px 13px; border-radius:999px; background:rgba(255,255,255,.1); font-size:12px; font-weight:700; color:var(--white); }
+.pg .diff__places{
+  margin:20px calc(var(--gutter) * -1) 0; padding:0 var(--gutter) 4px;
+  display:flex; flex-wrap:nowrap; gap:7px; overflow-x:auto; -webkit-overflow-scrolling:touch; scrollbar-width:none;
+}
+.pg .diff__places::-webkit-scrollbar{ display:none; }
+.pg .diff__places li{ flex:none; white-space:nowrap; padding:7px 13px; border-radius:999px; background:rgba(255,255,255,.1); font-size:12px; font-weight:700; color:var(--white); }
 .pg .diff__places--type{ margin-top:10px; }
 .pg .diff__places--type li{ background:var(--orange); color:var(--white); }
 
@@ -261,15 +265,6 @@ src="https://www.facebook.com/tr?id=162246964396993&ev=PageView&noscript=1"
 
 .pg .closing{ min-height:200px; padding:52px 0; display:flex; align-items:center; justify-content:center; text-align:center; }
 .pg .closing p{ margin:0 auto; max-width:20ch; font-size:20px; font-weight:800; color:var(--ink); letter-spacing:-0.03em; line-height:1.5; }
-
-.pg .fly{
-  position:fixed; right:14px; bottom:18px; z-index:40;
-  width:46px; height:46px; border:0; background:none; padding:0; cursor:pointer;
-  opacity:0; transform:translateY(8px) scale(.9); pointer-events:none;
-  transition:opacity .25s ease, transform .25s ease;
-}
-.pg .fly.show{ opacity:1; transform:none; pointer-events:auto; }
-.pg .fly svg{ width:100%; height:100%; fill:var(--ink); filter:drop-shadow(0 6px 10px rgba(60,40,0,.35)); }
 
 .pg .reveal{ opacity:0; transform:translateY(18px); transition:opacity .6s cubic-bezier(.22,.61,.36,1), transform .6s cubic-bezier(.22,.61,.36,1); }
 .pg .reveal.in{ opacity:1; transform:none; }
@@ -625,26 +620,10 @@ src="https://www.facebook.com/tr?id=162246964396993&ev=PageView&noscript=1"
     <div class="closing"><p>당신의 상상이 현실이 되는 여행 &mdash; 전문가와의 무료 1:1 맞춤 상담으로 확인해보세요.</p></div>
   </div>
 
-  <button class="fly" type="button" aria-label="맨 위로">
-    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 16v-2l-8-5V3.5C13 2.67 12.33 2 11.5 2S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></svg>
-  </button>
 </div>
 
 <script>
 (function(){
-  var fly = document.querySelector('.pg .fly'), de = document.documentElement;
-  if (fly) {
-    var update = function(){
-      var max = de.scrollHeight - de.clientHeight;
-      fly.style.setProperty('--p', (max > 0 ? de.scrollTop / max : 0).toFixed(4));
-      fly.classList.toggle('show', de.scrollTop > 380);
-    };
-    window.addEventListener('scroll', update, { passive:true });
-    window.addEventListener('resize', update);
-    update();
-    fly.addEventListener('click', function(){ window.scrollTo({ top:0, behavior:'smooth' }); });
-  }
-
   var vid = document.querySelector('.pg .aud__video');
   if (vid) {
     if (!('IntersectionObserver' in window)) {
